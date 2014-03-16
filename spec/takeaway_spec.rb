@@ -30,9 +30,15 @@ describe Takeaway do
     expect(takeaway.message).to eq("Thank you! Your order was placed successfully and that it will be delivered before #{time.strftime("%H%M")}")
   end
 
+  it "should send message if the order is correct" do
+    expect(takeaway).to receive(:send_message)
+    takeaway.check_send_message
+  end
+
   it "should return an error if the totals do not match" do
     bad_order = double(:bad_order,{:dish_quantities => {:pizza => 1, :burger => 2, :chips => 3}, :total => 10})
     bad_takeaway = Takeaway.new(bad_order)
-    expect{bad_takeaway.check_total}.to raise_error(RuntimeError)
+    expect(bad_takeaway.check_total).to be_false
   end
+
 end
