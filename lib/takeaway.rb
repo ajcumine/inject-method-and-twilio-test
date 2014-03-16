@@ -15,4 +15,8 @@ class Takeaway
     end
     result
   end
+
+  def check_total
+  end
+  
 end
