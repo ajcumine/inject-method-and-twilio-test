@@ -7,4 +7,12 @@ class Takeaway
   def initialize(order)
     @order = order
   end
+
+  def total
+    result = 0
+    @order.dish_quantities.each do |dish, quantity|
+      result = result + (quantity * MENU[dish])
+    end
+    result
+  end
 end

@@ -16,5 +16,13 @@ describe Takeaway do
   it "should know the total of what has been ordered" do
     expect(takeaway.order.total).to eq(18.5)
   end
+
+  it "should calculate total" do
+    expect(takeaway.total).to eq(18.5)
+  end
+
+  it "should check the totals match" do
+    expect(takeaway.check_total).to be_true
+  end
 end
   
