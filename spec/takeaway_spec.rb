@@ -12,6 +12,9 @@ describe Takeaway do
   it "should know what has been ordered" do
     expect(takeaway.order.dish_quantities.keys).to eq([:pizza, :burger, :chips])
   end
-  
+
+  if "should know the total of what has been ordered" do
+    expect(takeaway.order.total).to eq(18.5)
+  end
 end
   
