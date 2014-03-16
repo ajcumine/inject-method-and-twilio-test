@@ -1,3 +1,5 @@
+require "twilio-ruby"
+
 class Takeaway 
   
   MENU = {:pizza => 6, :chips => 1.5, :burger => 4}  
@@ -18,6 +20,7 @@ class Takeaway
 
   def check_total
     return true if total == order.total
+    raise "Totals do not match"
   end
 
   def message
