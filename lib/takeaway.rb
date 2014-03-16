@@ -20,4 +20,9 @@ class Takeaway
     return true if total == order.total
   end
 
+  def message
+    time = Time.now + (60*60)
+    "Thank you! Your order was placed successfully and that it will be delivered before #{time.strftime("%H%M")}"
+  end
+
 end
