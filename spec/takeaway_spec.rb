@@ -8,5 +8,10 @@ describe Takeaway do
   it "should initialize with an order" do
     expect(takeaway.order).to eq(order)
   end
+
+  it "should know what has been ordered" do
+    expect(takeaway.order.dish_quantities.keys).to eq([:pizza, :burger, :chips])
+  end
+  
 end
   
