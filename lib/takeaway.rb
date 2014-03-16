@@ -17,6 +17,7 @@ class Takeaway
   end
 
   def check_total
+    return true if total == order.total
   end
-  
+
 end
