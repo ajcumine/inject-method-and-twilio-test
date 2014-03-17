@@ -1,8 +1,8 @@
 require "twilio-ruby"
 MENU = {:pizza => 6, :chips => 1.5, :burger => 4} 
 
-account_sid = 'ACfee5d6e934b3442fa4d6a39eaa0a8b5f' 
-auth_token = 'a4a94a4ca87546cc9e60cf79b03abba1' 
+#account_sid = 'ACfee5d6e934b3442fa4d6a39eaa0a8b5f' 
+#auth_token = 'a4a94a4ca87546cc9e60cf79b03abba1' 
 
 class Takeaway 
 
@@ -35,10 +35,10 @@ class Takeaway
   end
 
   def client
-    @client = Twilio::REST::Client.new(account_sid, auth_token)
+    @client = Twilio::REST::Client.new('ACfee5d6e934b3442fa4d6a39eaa0a8b5f', 'a4a94a4ca87546cc9e60cf79b03abba1')
   end
 
-  def send_message
-    client.account.messages.create({:from => "+443333441037", :to => "+447789172199", :body => "#{message}"})
+  def send_message(message)
+    client.account.messages.create({:from => "+443333442639", :to => "+447789172199", :body => message)
   end
 end
