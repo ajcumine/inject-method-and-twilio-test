@@ -39,6 +39,6 @@ class Takeaway
   end
 
   def send_message(message)
-    client.account.messages.create({:from => "+443333442639", :to => "+447789172199", :body => message)
+    @client.account.messages.create({:from => "+441296340122", :to => "+447789172199", :body => message})
   end
 end
